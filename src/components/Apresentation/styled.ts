@@ -56,6 +56,8 @@ export const Button = styled.div`
 
 export const Title = styled.div`
     display: inline-block;
+    position: relative;
+    top: -10%;
     font-size: 60px;
     font-weight: bold;
     padding-right: 5%;
