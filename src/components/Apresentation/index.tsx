@@ -5,16 +5,12 @@ import { Link } from "react-router-dom"
 import getGame from "../../api/game.api";
 
 export default function Apresentation() {
-  
-  // const [game, setGame] = useState<Igame>();
 
   async function chamaGame(id:string) {
     const data = await getGame(id);
-    // setGame(data);
     console.log(data);
   }
   
-
   return (
     <StyledApresentation>
       <Container>
