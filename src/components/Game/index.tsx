@@ -20,9 +20,9 @@ export default function Game() {
     <StyledGame>
       {isLoaded === false && (
         <>
-          <div className="modal show loading">
+          <div className="loading">
             <Modal.Dialog>
-              <Modal.Header closeButton>
+              <Modal.Header>
                 <Modal.Title>Loading... ({loadingPercentage}%)</Modal.Title>
               </Modal.Header>
 
