@@ -7,15 +7,16 @@ import { Modal } from "react-bootstrap";
 export default function Game() {
   const url = "https://static.api.ebattle.lamia-edu.com/unity/arqs/";
 
-  const { unityProvider, isLoaded, loadingProgression } = useUnityContext({
-    loaderUrl: `${url}E-Battle BuildGL(10.09).loader.js`,
-    dataUrl: `${url}E-Battle BuildGL(10.09).data.unityweb`,
-    frameworkUrl: `${url}E-Battle BuildGL(10.09).framework.js.unityweb`,
-    codeUrl: `${url}E-Battle BuildGL(10.09).wasm.unityweb`,
-    webglContextAttributes: { preserveDrawingBuffer: true },
-  });
+  const { unityProvider, isLoaded, loadingProgression } =
+    useUnityContext({
+      loaderUrl: `${url}E-Battle BuildGL(18.09).loader.js`,
+      dataUrl: `${url}E-Battle BuildGL(18.09).data.unityweb`,
+      frameworkUrl: `${url}E-Battle BuildGL(18.09).framework.js.unityweb`,
+      codeUrl: `${url}E-Battle BuildGL(18.09).wasm.unityweb`,
+      webglContextAttributes: { preserveDrawingBuffer: true },
+    });
   const loadingPercentage = Math.round(loadingProgression * 100);
-
+  
   return (
     <StyledGame>
       {isLoaded === false && (
