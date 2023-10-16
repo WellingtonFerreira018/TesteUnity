@@ -1,7 +1,10 @@
-export default interface Igame {
-    categoria: number
-    id: number;
-    leanguage: number;
-    name: string;
-    questions: [string];
+export interface Igamecommunity {
+  id: number;
+  leanguage: number;
+  category: number;
+  name: string;
+  author: number;
+  visiblity: NumberConstructor;
+  descripition: string;
+  questions: [string]
 }
