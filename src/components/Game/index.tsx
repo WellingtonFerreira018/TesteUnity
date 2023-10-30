@@ -10,7 +10,7 @@ export const Game: React.FC = () => {
   const token = localStorage.getItem("token");
 
   const url =
-    "https://static.api.ebattle.lamia-edu.com/unity/arqs/E-BattleBuildGL(16-10)/";
+    "https://static.api.ebattle.lamia-edu.com/unity/arqs/E-BattleBuildGL(23-10)/";
 
   const { unityProvider, isLoaded, loadingProgression, sendMessage } =
     useUnityContext({
@@ -24,7 +24,7 @@ export const Game: React.FC = () => {
 
   function HandlerClick() {
     if (id_game !== null && token !== null) {
-      sendMessage("Canvas", "SetIdMatche", "92");
+      sendMessage("Canvas", "SetIdMatche", id_game);
       sendMessage("Canvas", "SetTokenAPI", token);
     }
   }

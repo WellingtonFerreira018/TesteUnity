@@ -13,8 +13,13 @@ export default function CardQuestions(props: ICardQuestions) {
   const { text, num } = props;
   return (
     <StyledCard>
-        <div>{num}</div>
-      <div>{text}</div>
+      <div>
+        <div>Pergunta {num + 1}</div>
+        <div>{text}</div>
+      </div>
+      <div>
+        <button></button>
+      </div>
     </StyledCard>
   );
 }

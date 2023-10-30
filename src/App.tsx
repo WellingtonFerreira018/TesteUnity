@@ -4,6 +4,7 @@ import Apresentation from './components/Apresentation';
 import Community from './pages/community';
 import Login from './pages/login';
 import PageGame from './pages/game';
+import CreateQuestions from './pages/createQuestions';
 import CreateGame from './pages/createGame';
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
       <Route path='/community' element={<Community />}/>
       <Route path='/games' element={<PageGame />}/>
       <Route path='/create' element={<CreateGame />}/>
+      <Route path='/createQuestions' element={<CreateQuestions />}/>
     </Routes>
   );
 }
