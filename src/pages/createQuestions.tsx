@@ -20,6 +20,14 @@ interface ICardQuestions {
   img: string;
 }
 
+interface FormValues {
+  nomeJogo: string;
+  descricaoJogo: string;
+  linguagem: string;
+  categoria: string;
+  visibilidade: string;
+}
+
 export default function CreateQuestions() {
   const [perguntas, setPerguntas] = useState<ICardQuestions[]>([]);
 
@@ -31,7 +39,7 @@ export default function CreateQuestions() {
     tip: "",
     answers: ["", "", "", ""],
     answer: 0,
-    time: 30, // Valor inicial do tempo (30 segundos)
+    time: 30,
     img: "",
   });
 
@@ -41,18 +49,9 @@ export default function CreateQuestions() {
     tip: "",
     answers: ["", "", "", ""],
     answer: 0,
-    time: 30, // Valor inicial do tempo (30 segundos)
+    time: 30,
     img: "",
   });
-
-  const initialData = {
-    language: 1,
-    category: 1,
-    name: "jogo front",
-    visibility: 1,
-    description: "teste do front-end",
-    questions: perguntas,
-  };
 
   const token = localStorage.getItem("token");
 
@@ -60,6 +59,17 @@ export default function CreateQuestions() {
     headers: {
       Authorization: token,
     },
+  };
+  const formGame = localStorage.getItem("Game");
+  const dataGame: FormValues | null = formGame ? JSON.parse(formGame) : null;
+
+  const initialData = {
+    language: dataGame?.linguagem,
+    category: dataGame?.categoria,
+    name: dataGame?.nomeJogo,
+    visibility: dataGame?.visibilidade,
+    description: dataGame?.descricaoJogo,
+    questions: perguntas,
   };
 
   const saveGame = () => {
